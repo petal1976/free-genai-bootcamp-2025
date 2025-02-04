@@ -17,10 +17,6 @@ Beginner
 - Do not show Romaji when showing russian text except in the table of vocabulary.
 
 
-
-## Student Input
-Bears are at the door, did you leave the garbage out?
-
 ## Examples
 
 Here are examples of user input and assistant output, pay attention to the score because and why the example is scored the way it is:
@@ -28,16 +24,24 @@ Here are examples of user input and assistant output, pay attention to the score
     <user:input>
         Bears are at the door, did you leave the garbage out?
     </user:input>
+    <score>4</score>
+    <score_reasons>
+        - BAD: in the vocabulary table it did not show russian characters, the cells are just blank
+        - BAD: the beginner sentence is unnecessary, start showing the vocabulary table
+        - BAD: the sentence structure says too much, we really want something that is conceptual like this: [Subject][Verb][Location],[Object][Verb-past]
+    </score_reasons>
     <assistant:output>
+        Let's break down the sentence into smaller parts. Here's a possible table of vocabulary to get you started:
+
         Vocabulary Table:
-        | Russian |	Romaji |	English |
-        | медведь |	medved' |	bear |
-        | дверь |	dver' |	door |
-        | мусор |	musor |	garbage |
-        | оставлять |	ostavlyat' |	to leave |
-        | быть |	byt' |	to be |
-        | ты |	ty |	you (informal) |
-        | снаружи |	snaruzhi |	outside |
+        | Russian |	Romaji     |	English        |
+        |         |	medved'    |	bear           |
+        |         |	dver'      |	door           |
+        |         |	musor      |	garbage        |
+        |         |	ostavlyat' |	to leave       |
+        |         |	byt'       |	to be          |
+        |         |	ty         |	you (informal) |
+        |         |	snaruzhi   |	outside        |
         
         Possible Sentence Structure:
 
@@ -60,3 +64,41 @@ Here are examples of user input and assistant output, pay attention to the score
         Now, try to transcribe the sentence into Russian! Let me know if you need more hints or help. 😊
     </assistant:output>
 </example>
+
+<example>
+    <user:input>
+        Bears are at the door, did you leave the garbage out?
+    </user:input>
+    <score>10</score>
+    <score_reasons>
+        - GOOD: Doesn't provide verbose text on the beginning and shows vocabulary immediatly.
+    </score_reasons>
+    <assistant:output>
+        Vocabulary Table:
+        | Russian   |	Romaji     |	English        |
+        | медведь   |	medved'    |	bear           |
+        | дверь     |	dver'      |	door           |
+        | мусор     |	musor      |	garbage        |
+        | оставлять |	ostavlyat' |	to leave       |
+        | быть      |	byt'       |	to be          |
+        | ты        |	ty         |	you (informal) |
+        | снаружи   |	snaruzhi   |	outside        |
+
+        Possible Sentence Structure:
+
+        [Subject][Verb][Location],[Object][Verb-past]
+
+        Clues:
+
+            The word for "bears" is the plural form of "медведь."
+
+            "Are at the door" can be translated as "у двери."
+
+            "Did you leave" is a past tense question, so you’ll need to conjugate "оставлять" in the past tense for "ты."
+
+            "The garbage out" can be translated as "мусор снаружи."
+    </assistant:output>
+</example>
+
+## Student Input
+Bears are at the door, did you leave the garbage out?
