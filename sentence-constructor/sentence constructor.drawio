@@ -1,0 +1,110 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:109.0) Gecko/20100101 Firefox/119.0" version="26.0.10">
+  <diagram name="Seite-1" id="54LRl6VsWU-88YGz6EWO">
+    <mxGraphModel dx="1781" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-1" value="Clues, Considerations, Next Steps" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="260" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-2" value="Vocabulary table" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="180" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-3" value="Sentence Structure" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="220" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-4" value="Assistent Output" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="140" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-5" value="Student input" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="50" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-6" value="English sentence" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-8" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="60" width="50" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-9" value="Setup" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="160" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-19" value="Clues, Considerations, Next Steps" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="520" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-21" value="Instructor Interpretation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="480" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-22" value="Assistent Output" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="440" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-23" value="Student input" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="350" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-24" value="Russian sentence attempt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="400" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-25" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="360" width="50" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-26" value="Attempt" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="440" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ed2sI2Q6o5DdbrIIGqyq-27" target="ed2sI2Q6o5DdbrIIGqyq-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ed2sI2Q6o5DdbrIIGqyq-27" target="ed2sI2Q6o5DdbrIIGqyq-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-27" value="Setup" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-220" y="180" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="ed2sI2Q6o5DdbrIIGqyq-29" target="ed2sI2Q6o5DdbrIIGqyq-29">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-330" y="290" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-290" y="330" />
+              <mxPoint x="-350" y="330" />
+              <mxPoint x="-350" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="ed2sI2Q6o5DdbrIIGqyq-29" target="ed2sI2Q6o5DdbrIIGqyq-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-260" y="360" />
+              <mxPoint x="-370" y="360" />
+              <mxPoint x="-370" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-29" value="Attempt" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-320" y="270" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="ed2sI2Q6o5DdbrIIGqyq-30" target="ed2sI2Q6o5DdbrIIGqyq-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-30" value="Clues" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-120" y="270" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-37" value="Clues, Considerations, Next Steps" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="740" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-39" value="Assistent Output" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="270" y="690" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-40" value="Student input" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="600" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-41" value="Student Question" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="650" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-42" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="610" width="50" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="ed2sI2Q6o5DdbrIIGqyq-43" value="Clues" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="130" y="675" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

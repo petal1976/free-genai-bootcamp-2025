@@ -1,0 +1,71 @@
+<sentence_structures>
+
+[Subject] [Verb]
+<example>
+<english>I speak.</english>
+<russian>Я говорю.</russian>
+<breakdown>
+- Я = I
+- говорю = speak
+</breakdown>
+</example>
+[Subject] [Verb] [Object]
+<example>
+<english>I see the raven.</english>
+<russian>Я вижу ворона.</russian>
+<breakdown>
+- Я = I
+- вижу = see
+- ворона = raven (accusative)
+</breakdown>
+</example>
+[Subject] [Verb] [Location]
+<example>
+<english>The raven is in the garden.</english>
+<russian>Ворон в саду.</russian>
+<breakdown>
+- Ворон = raven
+- в саду = in garden (prepositional)
+</breakdown>
+</example>
+[Subject] [Adjective]
+<example>
+<english>The raven is black.</english>
+<russian>Ворон чёрный.</russian>
+<breakdown>
+- Ворон = raven
+- чёрный = black
+</breakdown>
+</example>
+[Subject] [Verb] [Adverb]
+<example>
+<english>I speak slowly.</english>
+<russian>Я говорю медленно.</russian>
+<breakdown>
+- Я = I
+- говорю = speak
+- медленно = slowly
+</breakdown>
+</example>
+[Time] [Subject] [Verb] [Object]
+<example>
+<english>This morning, I saw the raven.</english>
+<russian>Сегодня утром я увидел ворона.</russian>
+<breakdown>
+- Сегодня утром = This morning
+- я = I
+- увидел = saw
+- ворона = raven (accusative)
+</breakdown>
+</example>
+[Location] [Subject] [Verb]
+<example>
+<english>In the garden, the raven is sitting.</english>
+<russian>В саду ворон сидит.</russian>
+<breakdown>
+- В саду = In garden (prepositional)
+- ворон = raven
+- сидит = sitting
+</breakdown>
+</example>
+</sentence_structures>
