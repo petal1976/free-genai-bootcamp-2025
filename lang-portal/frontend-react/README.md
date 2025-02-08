@@ -48,9 +48,3 @@ export default tseslint.config({
   },
 })
 ```
-
-## start the app locally
-
-```sh
-npx vite
-```
