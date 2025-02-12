@@ -1,10 +1,44 @@
 from flask import request, jsonify, g
 from flask_cors import cross_origin
 from datetime import datetime
+import sqlite3
+import os
 import math
 
 def load(app):
-  # todo /study_sessions POST
+
+  @app.route('/api/study-sessions', methods=['POST'])
+  @cross_origin()
+  def create_study_sessions():
+
+      try:
+          # Get JSON data from request
+          data = request.get_json()
+          
+          # Validate required fields
+          required_fields = ['group_id', 'study_activity_id']
+          if not all(field in data for field in required_fields):
+              return jsonify({'error': 'Missing required fields'}), 400
+          
+          # Connect to the database
+          cursor = app.db.cursor()
+          
+          # Insert the study session
+          cursor.execute('''
+              INSERT INTO study_sessions 
+              (group_id, study_activity_id) 
+              VALUES (?, ?)
+          ''', (data['group_id'], data['study_activity_id']))
+
+          app.db.commit()
+          
+          return jsonify({
+              'message': 'Study session recorded successfully',
+              'session_id': cursor.lastrowid
+          }), 200
+
+      except Exception as e:
+          return jsonify({"error": str(e)}), 500
 
   @app.route('/api/study-sessions', methods=['GET'])
   @cross_origin()

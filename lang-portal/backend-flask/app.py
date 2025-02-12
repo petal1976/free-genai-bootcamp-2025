@@ -43,6 +43,8 @@ def create_app(test_config=None):
     
     # Get allowed origins from study_activities table
     allowed_origins = get_allowed_origins(app)
+
+    allowed_origins.extend(["http://localhost:5173"])
     
     # In development, add localhost to allowed origins
     if app.debug:
