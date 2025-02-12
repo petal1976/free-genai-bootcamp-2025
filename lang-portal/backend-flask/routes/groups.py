@@ -156,6 +156,52 @@ def load(app):
       return jsonify({"error": str(e)}), 500
 
   # todo GET /groups/:id/words/raw
+  @app.route('/groups/<int:id>/words/raw', methods=['GET'])
+  @cross_origin()
+  def get_group_words_raw(id):
+
+    try:
+        # Connect to the database
+        cursor = app.db.cursor()
+
+        # First check if the group exists
+        cursor.execute('SELECT id FROM groups WHERE id = ?', (id,))
+        if not cursor.fetchone():
+            return jsonify({'error': 'Group not found'}), 404
+
+        # Get all words for the group
+        cursor.execute('''
+            SELECT 
+                w.id,
+                w.kanji,
+                w.romaji,
+                w.english,
+                w.parts
+            FROM words w
+            JOIN word_groups gw ON w.id = gw.word_id
+            WHERE gw.group_id = ?
+            ORDER BY w.id ASC
+        ''', (id,))
+
+        words = cursor.fetchall()
+        
+        # Convert the sqlite Rows to dictionaries
+        words_data = [{
+            'id': word['id'],
+            'kanji': word['kanji'],
+            'romaji': word['romaji'],
+            'english': word['english'],
+            'parts': word['parts']
+        } for word in words]
+
+        return jsonify({
+            'group_id': id,
+            'words': words_data,
+            'count': len(words_data)
+        }), 200
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
   @app.route('/groups/<int:id>/study_sessions', methods=['GET'])
   @cross_origin()
