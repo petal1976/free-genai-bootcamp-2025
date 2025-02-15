@@ -185,7 +185,96 @@ def load(app):
     except Exception as e:
       return jsonify({"error": str(e)}), 500
 
-  # todo POST /study_sessions/:id/review
+  @app.route('/api/study_sessions/<int:session_id>/review', methods=['POST', 'OPTIONS'])
+  @cross_origin()
+  def post_session_review(session_id):   
+    try:
+        # Get JSON data from request
+        data = request.get_json()
+        
+        if not isinstance(data, list):
+            return jsonify({'error': 'Request body must be an array of review results'}), 400
+            
+        # Validate each review item
+        for idx, review in enumerate(data):
+            # Check required fields
+            if 'word_id' not in review:
+                return jsonify({'error': f'Missing word_id in review at index {idx}'}), 400
+            if 'is_correct' not in review:
+                return jsonify({'error': f'Missing is_correct in review at index {idx}'}), 400
+                
+            # Validate types
+            if not isinstance(review['word_id'], int):
+                return jsonify({'error': f'word_id must be an integer at index {idx}'}), 400
+            if not isinstance(review['is_correct'], bool):
+                return jsonify({'error': f'is_correct must be a boolean at index {idx}'}), 400
+
+        # Connect to the database
+        cursor = app.db.cursor()
+        
+        # Check if session exists
+        cursor.execute('SELECT id FROM study_sessions WHERE id = ?', (session_id,))
+        if not cursor.fetchone():
+            return jsonify({'error': 'Study session not found'}), 404
+
+        # Begin transaction
+        cursor.execute('BEGIN TRANSACTION')
+        
+        try:
+            # Insert review results
+            for review in data:
+                cursor.execute('''
+                    INSERT INTO word_review_items (
+                        study_session_id,
+                        word_id,
+                        correct,
+                        created_at
+                    ) VALUES (?, ?, ?, datetime('now'))
+                ''', (
+                    session_id,
+                    review['word_id'],
+                    review['is_correct']
+                ))
+            
+                # Update or insert into word_reviews
+                cursor.execute('''
+                    INSERT INTO word_reviews (
+                        word_id,
+                        correct_count,
+                        wrong_count,
+                        last_reviewed
+                    ) 
+                    VALUES (?, 
+                        CASE WHEN ? THEN 1 ELSE 0 END,
+                        CASE WHEN ? THEN 0 ELSE 1 END,
+                        datetime('now')
+                    )
+                    ON CONFLICT(word_id) DO UPDATE SET
+                        correct_count = correct_count + CASE WHEN ? THEN 1 ELSE 0 END,
+                        wrong_count = wrong_count + CASE WHEN ? THEN 0 ELSE 1 END,
+                        last_reviewed = datetime('now')
+                ''', (
+                    review['word_id'],
+                    review['is_correct'],
+                    review['is_correct'],
+                    review['is_correct'],
+                    review['is_correct']
+                ))
+            
+            # Commit transaction
+            conn.commit()
+            
+            return jsonify({
+                'message': 'Reviews recorded successfully',
+                'session_id': session_id
+            }), 200
+        except Exception as e:
+            cursor.execute('ROLLBACK')
+            raise e
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
   @app.route('/api/study-sessions/reset', methods=['POST'])
   @cross_origin()
