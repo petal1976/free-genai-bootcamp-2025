@@ -10,35 +10,53 @@ def load(app):
   @app.route('/api/study-sessions', methods=['POST'])
   @cross_origin()
   def create_study_sessions():
-
+    try:
+      # Get JSON data from request
+      data = request.get_json()
+      print("\nReceived data:", data)  # Debug print
+      
+      # Validate required fields
+      required_fields = ['group_id', 'study_activity_id']
+      if not all(field in data for field in required_fields):
+          return jsonify({'error': 'Missing required fields'}), 400
+      
+      # Connect to the database
+      cursor = app.db.cursor()
+      
+      # Verify the group exists
+      cursor.execute('SELECT id FROM groups WHERE id = ?', (data['group_id'],))
+      if not cursor.fetchone():
+          return jsonify({'error': f'Group with id {data["group_id"]} not found'}), 404
+          
+      # Verify the study activity exists
+      cursor.execute('SELECT id FROM study_activities WHERE id = ?', (data['study_activity_id'],))
+      if not cursor.fetchone():
+          return jsonify({'error': f'Study activity with id {data["study_activity_id"]} not found'}), 404
+      
+      # Insert the study session
       try:
-          # Get JSON data from request
-          data = request.get_json()
-          
-          # Validate required fields
-          required_fields = ['group_id', 'study_activity_id']
-          if not all(field in data for field in required_fields):
-              return jsonify({'error': 'Missing required fields'}), 400
-          
-          # Connect to the database
-          cursor = app.db.cursor()
-          
-          # Insert the study session
           cursor.execute('''
               INSERT INTO study_sessions 
-              (group_id, study_activity_id) 
-              VALUES (?, ?)
+              (group_id, study_activity_id, created_at) 
+              VALUES (?, ?, datetime('now'))
           ''', (data['group_id'], data['study_activity_id']))
-
+          
           app.db.commit()
           
           return jsonify({
               'message': 'Study session recorded successfully',
               'session_id': cursor.lastrowid
           }), 200
+          
+      except sqlite3.Error as e:
+          print(f"\nSQLite error: {str(e)}")
+          return jsonify({'error': f'Database error: {str(e)}'}), 500
 
-      except Exception as e:
-          return jsonify({"error": str(e)}), 500
+    except Exception as e:
+        import traceback
+        print("\nError in create_study_sessions:")
+        print(traceback.format_exc())
+        return jsonify({"error": str(e)}), 500
 
   @app.route('/api/study-sessions', methods=['GET'])
   @cross_origin()
@@ -262,17 +280,21 @@ def load(app):
                 ))
             
             # Commit transaction
-            conn.commit()
+            app.db.commit()
             
             return jsonify({
                 'message': 'Reviews recorded successfully',
                 'session_id': session_id
             }), 200
+            
         except Exception as e:
             cursor.execute('ROLLBACK')
             raise e
 
     except Exception as e:
+        import traceback
+        print("\nError in post_session_review:")
+        print(traceback.format_exc())
         return jsonify({'error': str(e)}), 500
 
 
